@@ -5,6 +5,7 @@ import { selectorTodos } from '../todos/todosSlice';
 import { selectorFilter, actionsFilter } from './filterSlice';
 
 const filters = ['All', 'Completed', 'Active'];
+
 const Filter = ({ filter, activeFilter, handleChange }) => {
   const count = useSelector(selectorTodos.todosByFilter(filter)).length;
   const checked = activeFilter === filter;
@@ -26,6 +27,7 @@ const Filter = ({ filter, activeFilter, handleChange }) => {
     </div>
   );
 };
+
 const Filters = () => {
   const activeFilter = useSelector(selectorFilter.selectFilter);
   const dispatch = useDispatch();
